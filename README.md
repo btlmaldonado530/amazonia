@@ -36,3 +36,7 @@
    iii. use state hook
    iv. use effect hook
    v. use reducer hook
+9. Manage state by reducer hook
+   i. define reducer
+   ii. update fetch data
+   iii. get state from useReducer
