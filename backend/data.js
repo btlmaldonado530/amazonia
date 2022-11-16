@@ -10,7 +10,7 @@ const data = {
       brand: 'Cartier',
       rating: 4.5,
       numReviews: 10,
-      descrtiption: 'high quality ring',
+      description: 'high quality ring',
     },
 
     {
@@ -23,7 +23,7 @@ const data = {
       brand: 'Cartier',
       rating: 4.0,
       numReviews: 10,
-      descrtiption: 'high quality earrings',
+      description: 'high quality earrings',
     },
 
     {
@@ -36,7 +36,7 @@ const data = {
       brand: 'Bvlgari',
       rating: 4.5,
       numReviews: 14,
-      descrtiption: 'high quality necklace',
+      description: 'high quality necklace',
     },
 
     {
@@ -49,7 +49,7 @@ const data = {
       brand: 'Bvlgari',
       rating: 4.5,
       numReviews: 10,
-      descrtiption: 'high quality bracelet',
+      description: 'high quality bracelet',
     },
   ],
 };
