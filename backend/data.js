@@ -1,6 +1,7 @@
 const data = {
   products: [
     {
+      _id: '1',
       name: 'Cartier Diamond Ring',
       slug: 'diamond-ring',
       category: 'Rings',
@@ -14,6 +15,7 @@ const data = {
     },
 
     {
+      _id: '2',
       name: 'Cartier Diamond Earrings',
       slug: 'diamond-earrings',
       category: 'Earrings',
@@ -27,6 +29,7 @@ const data = {
     },
 
     {
+      _id: '3',
       name: 'Bvlgari Serpenti Diamond Necklace',
       slug: 'diamond-necklace',
       category: 'Necklaces',
@@ -40,6 +43,7 @@ const data = {
     },
 
     {
+      _id: '4',
       name: 'Bvlgari Serpenti Viper Bracelet',
       slug: 'diamond-bracelet',
       category: 'Bracelets',
