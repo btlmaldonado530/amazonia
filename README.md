@@ -71,3 +71,7 @@
     i. click handler for increase/decrease itme in cart
     ii. click handler for remove itme from cart
     iii. click handler for checkout
+18. Create sign in screen
+    i. create sign in form
+    ii. add email and password
+    iii. add sign in button
