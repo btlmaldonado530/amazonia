@@ -72,6 +72,58 @@ const data = {
       numReviews: 10,
       description: 'high quality bracelet',
     },
+
+    /*   {
+      name: 'Tribble in Quadrotriticale Sack',
+      slug: 'tribble',
+      category: 'Collectible',
+      image: '/images/p9.jpg',
+      price: 15,
+      countInStock: 10,
+      brand: 'Cartier',
+      rating: 4.5,
+      numReviews: 10,
+      description: 'high quality collectible',
+    },
+
+    {
+      name: 'Circuit Board Pencil holder',
+      slug: 'pencil-holder',
+      category: 'Office',
+      image: '/images/p10.jpg',
+      price: 70,
+      countInStock: 20,
+      brand: 'Cartier',
+      rating: 4.0,
+      numReviews: 10,
+      description: 'high quality pencil holder',
+    },
+
+    {
+      name: 'Please Delete My Broweser History Bracelet',
+      slug: 'funny-gift',
+      category: 'Jewelry',
+      image: '/images/p11.jpg',
+      price: 25,
+      countInStock: 15,
+      brand: 'Bvlgari',
+      rating: 4.5,
+      numReviews: 14,
+      description: 'high quality bracelet',
+    },
+
+    {
+      name: "There's no place like home Sign",
+      slug: 'home-sign',
+      category: 'Home dDecor',
+      image: '/images/p12.jpg',
+      price: 9,
+      countInStock: 5,
+      brand: 'Bvlgari',
+      rating: 4.5,
+      numReviews: 10,
+      description: 'high quality sign',
+    }, */
   ],
 };
 export default data;
