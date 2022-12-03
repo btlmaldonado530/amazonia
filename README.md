@@ -110,5 +110,7 @@
     ii. handle submit
 27. Create Place Order Screen
     i. show cart items, payment, and address
-    ii. handle place order action
-    iii. create order create api
+    ii. calculate order summary
+28. Implement Place Order Action
+    i. handle place order action
+    ii. create order create api
