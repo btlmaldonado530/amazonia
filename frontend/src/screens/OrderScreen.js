@@ -63,7 +63,7 @@ export default function OrderScreen() {
   return loading ? (
     <LoadingBox></LoadingBox>
   ) : error ? (
-    <MessageBox variant="danger"> {error}</MessageBox>
+    <MessageBox variant="danger">{error}</MessageBox>
   ) : (
     <div>
       <Helmet>
@@ -72,6 +72,25 @@ export default function OrderScreen() {
       <h1 className="my-3">Order {orderId}</h1>
       <Row>
         <Col md={8}>
+          <Card className="mb-3">
+            <Card.Body>
+              <Card.Title>Shipping</Card.Title>
+              <Card.Text>
+                <strong>Name:</strong> {order.shippingAddress.fullName} <br />
+                <strong>Address: </strong> {order.shippingAddress.address},
+                {order.shippingAddress.city}, {order.shippingAddress.PostalCode}
+                , {order.shippingAddress.country}
+              </Card.Text>
+              {order.isDelivered ? (
+                <MessageBox variant="success">
+                  Delivered at {order.deliveredAt}
+                </MessageBox>
+              ) : (
+                <MessageBox variant="danger">Not Delivered</MessageBox>
+              )}
+            </Card.Body>
+          </Card>
+
           <Card className="mb-3">
             <Card.Body>
               <Card.Title>Payment</Card.Title>
@@ -87,6 +106,7 @@ export default function OrderScreen() {
               )}
             </Card.Body>
           </Card>
+
           <Card className="mb-3">
             <Card.Body>
               <Card.Title>Items</Card.Title>
@@ -113,6 +133,7 @@ export default function OrderScreen() {
             </Card.Body>
           </Card>
         </Col>
+
         <Col md={4}>
           <Card className="mb-3">
             <Card.Body>
@@ -134,6 +155,16 @@ export default function OrderScreen() {
                   <Row>
                     <Col>Tax</Col>
                     <Col>${order.taxPrice.toFixed(2)}</Col>
+                  </Row>
+                </ListGroup.Item>
+                <ListGroup.Item>
+                  <Row>
+                    <Col>
+                      <strong> Order Total</strong>
+                    </Col>
+                    <Col>
+                      <strong>${order.totalPrice.toFixed(2)}</strong>
+                    </Col>
                   </Row>
                 </ListGroup.Item>
               </ListGroup>

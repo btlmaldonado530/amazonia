@@ -79,7 +79,7 @@ const data = {
     },
 
     {
-      name: 'Please Delete My Broweser History Bracelet',
+      name: 'Please Delete My Browser History Bracelet',
       slug: 'funny-gift',
       category: 'Jewelry',
       image: '/images/p11.jpg',
