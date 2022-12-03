@@ -17,7 +17,7 @@ const data = {
   ],
 
   products: [
-    {
+    /*  {
       //_id: '1',
       name: 'Cartier Diamond Ring',
       slug: 'diamond-ring',
@@ -71,9 +71,10 @@ const data = {
       rating: 4.5,
       numReviews: 10,
       description: 'high quality bracelet',
-    },
+    }, */
 
-    /*   {
+    {
+      //_id:'5',
       name: 'Tribble in Quadrotriticale Sack',
       slug: 'tribble',
       category: 'Collectible',
@@ -87,6 +88,7 @@ const data = {
     },
 
     {
+      //_id:'6',
       name: 'Circuit Board Pencil holder',
       slug: 'pencil-holder',
       category: 'Office',
@@ -100,6 +102,7 @@ const data = {
     },
 
     {
+      //_id:'7',
       name: 'Please Delete My Broweser History Bracelet',
       slug: 'funny-gift',
       category: 'Jewelry',
@@ -113,6 +116,7 @@ const data = {
     },
 
     {
+      //_id:'8',
       name: "There's no place like home Sign",
       slug: 'home-sign',
       category: 'Home dDecor',
@@ -123,7 +127,7 @@ const data = {
       rating: 4.5,
       numReviews: 10,
       description: 'high quality sign',
-    }, */
+    },
   ],
 };
 export default data;

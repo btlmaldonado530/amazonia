@@ -1,6 +1,6 @@
 const data = {
   products: [
-    {
+    /*  {
       name: 'Cartier Diamond Ring',
       slug: 'diamond-ring',
       category: 'Rings',
@@ -50,9 +50,9 @@ const data = {
       rating: 4.5,
       numReviews: 10,
       description: 'high quality bracelet',
-    },
+    }, */
 
-    /* {
+    {
       name: 'Tribble in Quadrotriticale Sack',
       slug: 'tribble',
       category: 'Collectible',
@@ -102,7 +102,7 @@ const data = {
       rating: 4.5,
       numReviews: 10,
       description: 'high quality sign',
-    }, */
+    },
   ],
 };
 export default data;
