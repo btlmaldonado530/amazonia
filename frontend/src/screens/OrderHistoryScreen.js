@@ -1,12 +1,12 @@
-import axios from 'axios';
 import React, { useContext, useEffect, useReducer } from 'react';
-import Button from 'react-bootstrap/Button';
 import { Helmet } from 'react-helmet-async';
+import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import LoadingBox from '../components/LoadingBox';
 import MessageBox from '../components/MessageBox';
 import { Store } from '../Store';
 import { getError } from '../utils';
+import Button from 'react-bootstrap/esm/Button';
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -30,7 +30,6 @@ export default function OrderHistoryScreen() {
     loading: true,
     error: '',
   });
-
   useEffect(() => {
     const fetchData = async () => {
       dispatch({ type: 'FETCH_REQUEST' });
@@ -42,12 +41,14 @@ export default function OrderHistoryScreen() {
         );
         dispatch({ type: 'FETCH_SUCCESS', payload: data });
       } catch (error) {
-        dispatch({ type: 'FETCH_FAIL', payload: getError(error) });
+        dispatch({
+          type: 'FETCH_FAIL',
+          payload: getError(error),
+        });
       }
     };
     fetchData();
   }, [userInfo]);
-
   return (
     <div>
       <Helmet>
@@ -88,7 +89,7 @@ export default function OrderHistoryScreen() {
                     type="button"
                     variant="light"
                     onClick={() => {
-                      navigate(`/order/${orders._id}`);
+                      navigate(`/order/${order._id}`);
                     }}
                   >
                     Details

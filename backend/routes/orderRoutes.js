@@ -58,10 +58,11 @@ orderRouter.put(
         id: req.body.id,
         status: req.body.status,
         update_time: req.body.update_time,
-        eamil_address: req.body.email_address,
+        email_address: req.body.email_address,
       };
-      const updateOrder = await order.save();
-      res.send({ message: 'Order Paid', order: updateOrder });
+
+      const updatedOrder = await order.save();
+      res.send({ message: 'Order Paid', order: updatedOrder });
     } else {
       res.status(404).send({ message: 'Order Not Found' });
     }

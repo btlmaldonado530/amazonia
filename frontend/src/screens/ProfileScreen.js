@@ -1,11 +1,11 @@
-import React, { useContext, useState, useReducer } from 'react';
-import { Store } from '../Store';
+import React, { useContext, useReducer, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
-import axios from 'axios';
+import { Store } from '../Store';
 import { toast } from 'react-toastify';
 import { getError } from '../utils';
+import axios from 'axios';
 
 const reducer = (state, action) => {
   switch (action.type) {
