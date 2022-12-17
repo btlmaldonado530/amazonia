@@ -76,64 +76,72 @@
     - add email and password
     - add signin button
 19. Connect to MongoDB
-    i. create atlas mongoDB database
-    ii. install local mongodb database
-    iii. npm install mongoose
-    iv.connect to mongodb database
+    - create atlas mongoDB database
+    - install local mongodb database
+    - npm install mongoose
+    - connect to mongodb database
 20. Seed Sample Products
-    i. create product model
-    ii.create user model
-    iii. create seed route
-    iv. use route in server.js
-    v. seed sample product
+    - create product model
+    - create user model
+    - create seed route
+    - use route in server.js
+    - seed sample product
 21. Create Sample users
-    i. create user model
-    ii. seed sample users
+    - create user model
+    - seed sample users
 22. Create Signin Backend API
-    i. create signin api
-    ii. npm install jsonwebtoken
-    iii. define generateToken
+    - create signin api
+    - npm install jsonwebtoken
+    - define generateToken
 23. Complete Signin screen
-    i. handle submit action
-    ii. save token in store and local storage
-    iii. show user name in header
+    - handle submit action
+    - save token in store and local storage
+    - show user name in header
 24. Create Shipping Screen
-    i. create form inputs
-    ii. handle save shipping address
-    iii. add checkout wizard bar
+    - create form inputs
+    - handle save shipping address
+    - add checkout wizard bar
 25. Create Sign Up Screen
-    i. create input forms
-    ii. handle submit
-    iii. create backend api
+    - create input forms
+    - handle submit
+    - create backend api
 26. Implement Select Payment Method Screen
-    i. create input forms
-    ii. handle submit
+    - create input forms
+    - handle submit
 27. Create Place Order Screen
-    i. show cart items, payment, and address
-    ii. calculate order summary
+    - show cart items, payment, and address
+    - calculate order summary
 28. Implement Place Order Action
-    i. handle place order action
-    ii. create order create api
+    - handle place order action
+    - create order create api
 29. Create Order Screen
-    i. create backend api for order/:id
-    ii. fetch order api in frontend
-    iii. show order information in two columns
+    - create backend api for order/:id
+    - fetch order api in frontend
+    - show order information in two columns
 30. Pay Order By PayPal
-    i. generate paypal client id
-    ii. create api to return client id
-    iii. install react-paypal-js
-    iv. use paypal scrpit provider in index
-    v. use paypal script reducer in order screen
-    vi. implement load paypal script function
-    vii. render paypal button
-    viii. implement onapprove payment function
-    ix. create pay order api in backend
+    - generate paypal client id
+    - create api to return client id
+    - install react-paypal-js
+    - use paypal scrpit provider in index
+    - use paypal script reducer in order screen
+    - implement load paypal script function
+    - render paypal button
+    - implement onapprove payment function
+    - create pay order api in backend
 31. Display Order History
-    i. create order screen
-    ii. create order history api
-    iii. use api in the frontend
+    - create order screen
+    - create order history api
+    - use api in the frontend
 32. Create Profile Screen
-    i. get user info from context
-    ii. show user information
-    iii. create user update api
-    iv. update user info
+    - get user info from context
+    - show user information
+    - create user update api
+    - update user info
+33. Publish to Heroku
+    - create and config node project
+    - serve build folder in frontend folder
+    - create heroku account
+    - connect it to github
+    - create mongodb atlas database
+    - set database connection in heroku env variables
+    - commit and push
