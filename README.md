@@ -137,7 +137,7 @@
     - show user information
     - create user update api
     - update user info
-33. Publish to Heroku
+33. Publish to Heroku (ended up removing from Heroku - no longer free)
     - create and config node project
     - serve build folder in frontend folder
     - create heroku account
