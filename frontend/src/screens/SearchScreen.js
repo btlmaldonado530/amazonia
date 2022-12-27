@@ -243,7 +243,7 @@ export default function SearchScreen() {
                     }}
                   >
                     <option value="newest">Newsest Arrivals</option>
-                    <option vlaue="lowest">Price: Low to High</option>
+                    <option value="lowest">Price: Low to High</option>
                     <option value="highest">Price: High to Low</option>
                     <option value="toprated">Avg. Customer Reviews</option>
                   </select>
