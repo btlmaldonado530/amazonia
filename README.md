@@ -156,3 +156,9 @@
     - define protected route component
     - define admin route component
     - add menu for admin in header
+37. Upgrade to React 18
+    - upgrade all packages in fromntend folder
+    - remove package-lock.json and node_modules
+    - install upgraded packages
+    - replace render with create root
+    - fix LinkContainer to props error

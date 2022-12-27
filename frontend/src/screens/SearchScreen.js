@@ -117,14 +117,16 @@ export default function SearchScreen() {
     fetchCategories();
   }, [dispatch]);
 
-  const getFilterUrl = (filter) => {
+  const getFilterUrl = (filter, skipPathname) => {
     const filterPage = filter.page || page;
     const filterCategory = filter.category || category;
     const filterQuery = filter.query || query;
     const filterRating = filter.rating || rating;
     const filterPrice = filter.price || price;
     const sortOrder = filter.order || order;
-    return `/search?category=${filterCategory}&query=${filterQuery}&rating=${filterRating}&price=${filterPrice}&order=${sortOrder}&page=${filterPage}`;
+    return `${
+      skipPathname ? '' : '/search'
+    }category=${filterCategory}&query=${filterQuery}&rating=${filterRating}&price=${filterPrice}&order=${sortOrder}&page=${filterPage}`;
   };
 
   return (
@@ -243,7 +245,7 @@ export default function SearchScreen() {
                     <option value="newest">Newsest Arrivals</option>
                     <option vlaue="lowest">Price: Low to High</option>
                     <option value="highest">Price: High to Low</option>
-                    <option value="toprated">Avg.Customer Reviews</option>
+                    <option value="toprated">Avg. Customer Reviews</option>
                   </select>
                 </Col>
               </Row>
@@ -264,7 +266,10 @@ export default function SearchScreen() {
                   <LinkContainer
                     key={x + 1}
                     className="mx-1"
-                    to={getFilterUrl({ page: x + 1 })}
+                    to={{
+                      pathname: '/search',
+                      search: getFilterUrl({ page: x + 1 }, true),
+                    }}
                   >
                     <Button
                       className={Number(page) === x + 1 ? 'text-bold' : ''}
