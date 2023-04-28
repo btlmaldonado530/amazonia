@@ -8,7 +8,6 @@ import Badge from 'react-bootstrap/Badge';
 import Nav from 'react-bootstrap/Nav';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Container from 'react-bootstrap/Container';
-import Button from 'react-bootstrap/Button';
 import { LinkContainer } from 'react-router-bootstrap';
 import { useContext, useEffect, useState } from 'react';
 import { Store } from './Store';
@@ -21,6 +20,7 @@ import PlaceOrderScreen from './screens/PlaceOrderScreen';
 import OrderScreen from './screens/OrderScreen';
 import OrderHistoryScreen from './screens/OrderHistoryScreen';
 import ProfileScreen from './screens/ProfileScreen';
+import Button from 'react-bootstrap/Button';
 import { getError } from './utils';
 import axios from 'axios';
 import SearchBox from './components/SearchBox';
@@ -29,10 +29,17 @@ import ProtectedRoute from './components/ProtectedRoute';
 import DashboardScreen from './screens/DashboardScreen';
 import AdminRoute from './components/AdminRoute';
 import ProductListScreen from './screens/ProductListScreen';
+//import ProductEditScreen from './screens/ProductEditScreen';
+//import OrderListScreen from './screens/OrderListScreen';
+//import UserListScreen from './screens/UserListScreen';
+//import UserEditScreen from './screens/UserEditScreen';
+//import MapScreen from './screens/MapScreen';
+//import ForgetPasswordScreen from './screens/ForgetPasswordScreen';
+//import ResetPasswordScreen from './screens/ResetPasswordScreen';
 
 function App() {
   const { state, dispatch: ctxDispatch } = useContext(Store);
-  const { cart, userInfo } = state;
+  const { fullbox, cart, userInfo } = state;
 
   const signoutHandler = () => {
     ctxDispatch({ type: 'USER_SIGNOUT' });
@@ -60,8 +67,12 @@ function App() {
       <div
         className={
           sidebarIsOpen
-            ? 'd-flex flex-column site-container active-cont'
-            : 'd-flex flex-column site-container'
+            ? fullbox
+              ? 'site-container active-cont d-flex flex-column full-box'
+              : 'site-container active-cont d-flex flex-column'
+            : fullbox
+              ? 'site-container d-flex flex-column full-box'
+              : 'site-container d-flex flex-column'
         }
       >
         <ToastContainer position="bottom-center" limit={1} />
@@ -164,6 +175,10 @@ function App() {
               <Route path="/search" element={<SearchScreen />} />
               <Route path="/signin" element={<SigninScreen />} />
               <Route path="/signup" element={<SignupScreen />} />
+              {/* <Route
+                path="/forget-password"
+                element={<ForgetPasswordScreen />}
+              /> */}
               <Route
                 path="/profile"
                 element={
@@ -172,6 +187,14 @@ function App() {
                   </ProtectedRoute>
                 }
               />
+              {/* <Route
+                path="/map"
+                element={
+                  <ProtectedRoute>
+                    <MapScreen />
+                  </ProtectedRoute>
+                }
+              /> */}
               <Route path="/placeorder" element={<PlaceOrderScreen />} />
               <Route
                 path="/order/:id"
@@ -203,6 +226,22 @@ function App() {
                   </AdminRoute>
                 }
               ></Route>
+              {/* <Route
+                path="/admin/orders"
+                element={
+                  <AdminRoute>
+                    <OrderListScreen />
+                  </AdminRoute>
+                }
+              ></Route> */}
+              {/* <Route
+                path="/admin/users"
+                element={
+                  <AdminRoute>
+                    <UserListScreen />
+                  </AdminRoute>
+                }
+              ></Route> */}
               <Route
                 path="/admin/products"
                 element={
@@ -211,6 +250,22 @@ function App() {
                   </AdminRoute>
                 }
               ></Route>
+              {/* <Route
+                path='/admin/product/:id'
+                element={
+                  <AdminRoute>
+                    <ProductEditScreen />
+                  </AdminRoute>
+                }
+              ></Route> */}
+              {/* <Route
+                path='/admin/user/:id'
+                element={
+                  <AdminRoute>
+                    <UserEditScreen />
+                  </AdminRoute>
+                }
+              ></Route> */}
 
               <Route path="/" element={<HomeScreen />} />
             </Routes>
@@ -220,7 +275,7 @@ function App() {
           <div className="text-center">All rights reserved</div>
         </footer>
       </div>
-    </BrowserRouter>
+    </BrowserRouter >
   );
 }
 
