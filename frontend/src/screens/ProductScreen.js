@@ -66,6 +66,7 @@ function ProductScreen() {
     });
     navigate('/cart');
   };
+
   return loading ? (
     <LoadingBox />
   ) : error ? (

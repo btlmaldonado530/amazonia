@@ -19,7 +19,7 @@
    - create router for product screen
 7. Create Node.JS Server
    - run npm init in root folder
-   - update package,json set type: module
+   - update package.json set type: module
    - add .js to imports
    - npm install express
    - create server.js
