@@ -19,6 +19,7 @@ const data = {
   products: [
     /* 
  {
+   _id: '5',
    name: 'Nike Slim shirt',
    slug: 'nike-slim-shirt',
    category: 'Shirts',
@@ -31,6 +32,7 @@ const data = {
    description: 'high quality shirt',
  },
  {
+    _id: '6',
    name: 'Adidas Fit Shirt',
    slug: 'adidas-fit-shirt',
    category: 'Shirts',
@@ -43,6 +45,7 @@ const data = {
    description: 'high quality product',
  },
  {
+ _id: '7',
    name: 'Nike Slim Pant',
    slug: 'nike-slim-pant',
    category: 'Pants',
@@ -55,6 +58,7 @@ const data = {
    description: 'high quality product',
  },
  {
+ _id: '8',
    name: 'Adidas Fit Pant',
    slug: 'adidas-fit-pant',
    category: 'Pants',
@@ -66,8 +70,8 @@ const data = {
    numReviews: 10,
    description: 'high quality product',
  },
- 
  {
+ _id: '9',
    name: 'Cartier Diamond Ring',
    slug: 'diamond-ring',
    category: 'Rings',
@@ -80,6 +84,7 @@ const data = {
    description: 'high quality ring',
  },
  {
+ _id: '10',
    name: 'Cartier Diamond Earrings',
    slug: 'diamond-earrings',
    category: 'Earrings',
@@ -92,6 +97,7 @@ const data = {
    description: 'high quality earrings',
  },
  {
+ _id: '11',
    name: 'Bvlgari Serpenti Diamond Necklace',
    slug: 'diamond-necklace',
    category: 'Necklaces',
@@ -104,6 +110,7 @@ const data = {
    description: 'high quality necklace',
  },
  {
+ _id: '12',
    name: 'Bvlgari Serpenti Viper Bracelet',
    slug: 'diamond-bracelet',
    category: 'Bracelets',
