@@ -116,6 +116,7 @@ const data = {
    description: 'high quality bracelet',
  }, */
     {
+      _id: '1',
       name: 'Tribble in Quadrotriticale Sack',
       slug: 'tribble',
       category: 'Collectible',
@@ -128,6 +129,7 @@ const data = {
       description: 'high quality collectible',
     },
     {
+      _id: '2',
       name: 'Circuit Board Pencil holder',
       slug: 'pencil-holder',
       category: 'Office',
@@ -140,6 +142,7 @@ const data = {
       description: 'high quality pencil holder',
     },
     {
+      _id: '3',
       name: 'Please Delete My Browser History Bracelet',
       slug: 'funny-gift',
       category: 'Jewelry',
@@ -152,6 +155,7 @@ const data = {
       description: 'high quality bracelet',
     },
     {
+      _id: '4',
       name: "There's no place like home Sign",
       slug: 'home-sign',
       category: 'Home Decor',
