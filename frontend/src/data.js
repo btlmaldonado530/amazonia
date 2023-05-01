@@ -116,7 +116,7 @@ const data = {
       category: 'Office',
       image: '/images/p10.jpg',
       price: 70,
-      countInStock: 20,
+      countInStock: 0,
       brand: 'Cartier',
       rating: 4.0,
       numReviews: 10,
@@ -137,7 +137,7 @@ const data = {
     {
       name: "There's no place like home Sign",
       slug: 'home-sign',
-      category: 'Home dDecor',
+      category: 'Home Decor',
       image: '/images/p12.jpg',
       price: 9,
       countInStock: 5,
