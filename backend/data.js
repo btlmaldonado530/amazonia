@@ -137,12 +137,12 @@ const data = {
     },
     {
       _id: '2',
-      name: 'Circuit Board Pencil holder',
+      name: 'Circuit Board Pencil Holder',
       slug: 'pencil-holder',
       category: 'Office',
       image: '/images/p10.jpg',
       price: 70,
-      countInStock: 0,
+      countInStock: 20,
       brand: 'Cartier',
       rating: 4.0,
       numReviews: 10,
@@ -163,7 +163,7 @@ const data = {
     },
     {
       _id: '4',
-      name: "There's no place like home Sign",
+      name: "There's No Place Like Home Sign",
       slug: 'home-sign',
       category: 'Home Decor',
       image: '/images/p12.jpg',
