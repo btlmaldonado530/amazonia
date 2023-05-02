@@ -15,8 +15,7 @@ main {
   flex: 1;
 }
 
-.btn-primary,
-btn-outline-orimary {
+.btn-primary {
   background-color: #f0c040;
   color: #000000;
 }
