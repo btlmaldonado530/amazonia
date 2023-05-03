@@ -113,7 +113,7 @@
     - calculate order summary
 28. Implement Place Order Action
     - handle place order action
-    - create order create api
+    - create create order api
 29. Create Order Screen
     - create backend api for order/:id
     - fetch order api in frontend

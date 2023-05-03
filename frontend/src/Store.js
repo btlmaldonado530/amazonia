@@ -54,8 +54,8 @@ function reducer(state, action) {
         ...state,
         cart: {
           ...state.cart,
-          cartItems: [],
-        },
+          cartItems: []
+        }
       };
 
     case 'USER_SIGNIN':
