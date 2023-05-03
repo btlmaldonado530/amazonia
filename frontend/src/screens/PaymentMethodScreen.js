@@ -1,14 +1,16 @@
 import React, { useContext, useEffect, useState } from 'react';
-import CheckoutSteps from '../components/CheckoutSteps';
+import { Helmet } from 'react-helmet-async';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
-import { Helmet } from 'react-helmet-async';
+import CheckoutSteps from '../components/CheckoutSteps';
 import { Store } from '../Store';
 import { useNavigate } from 'react-router-dom';
 
 export default function PaymentMethodScreen() {
   const navigate = useNavigate();
+
   const { state, dispatch: ctxDispatch } = useContext(Store);
+
   const {
     cart: { shippingAddress, paymentMethod },
   } = state;
@@ -22,6 +24,7 @@ export default function PaymentMethodScreen() {
       navigate('./shipping');
     }
   }, [shippingAddress, navigate]);
+
   const submitHamdler = (e) => {
     e.preventDefault();
     ctxDispatch({ type: 'SAVE_PAYMENT_METHOD', payload: paymentMethodName });
@@ -31,7 +34,7 @@ export default function PaymentMethodScreen() {
   return (
     <div>
       <CheckoutSteps step1 step2 step3></CheckoutSteps>
-      <div className="container cmall-container">
+      <div className="container small-container">
         <Helmet>
           <title>Payment Method</title>
         </Helmet>
