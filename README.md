@@ -137,13 +137,14 @@
     - show user information
     - create user update api
     - update user info
-33. Publish to Heroku (ended up removing from Heroku - no longer free)
+33. Publish to Heroku (removed from Heroku - no longer free tier)
+    Publish to render.com
     - create and config node project
     - serve build folder in frontend folder
-    - create heroku account
+    - create render.com account
     - connect it to github
     - create mongodb atlas database
-    - set database connection in heroku env variables
+    - set database connection in render.com env variables
     - commit and push
 34. Add Sidebar and Search Box
     - add sidebar
