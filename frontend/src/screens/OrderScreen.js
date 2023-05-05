@@ -69,7 +69,7 @@ export default function OrderScreen() {
   }
 
   function onApprove(data, actions) {
-    return actions.order.capture().then(async function (details) {
+    return actions.order.capture().then(async function(details) {
       try {
         dispatch({ type: 'PAY_REQUEST' });
         const { data } = await axios.put(
@@ -80,7 +80,6 @@ export default function OrderScreen() {
           }
         );
         dispatch({ type: 'PAY_SUCCESS', payload: data });
-
         toast.success('Order is paid');
       } catch (err) {
         dispatch({ type: 'PAY_FAIL', payload: getError(err) });
@@ -129,7 +128,7 @@ export default function OrderScreen() {
       };
       loadPayPalScript();
     }
-  }, [order, userInfo, orderId, navigate, successPay, paypalDispatch]);
+  }, [order, userInfo, orderId, navigate, paypalDispatch, successPay]);
 
   return loading ? (
     <LoadingBox></LoadingBox>
@@ -147,9 +146,9 @@ export default function OrderScreen() {
             <Card.Body>
               <Card.Title>Shipping</Card.Title>
               <Card.Text>
-                <strong>Name:</strong> {order.shippingAddress.fullName} <br />
+                <strong>Name: </strong> {order.shippingAddress.fullName} <br />
                 <strong>Address: </strong> {order.shippingAddress.address},
-                {order.shippingAddress.city}, {order.shippingAddress.PostalCode}
+                {order.shippingAddress.city}, {order.shippingAddress.postalCode}
                 , {order.shippingAddress.country}
               </Card.Text>
               {order.isDelivered ? (
@@ -166,7 +165,7 @@ export default function OrderScreen() {
             <Card.Body>
               <Card.Title>Payment</Card.Title>
               <Card.Text>
-                <strong>Method:</strong> {order.paymentMethod}
+                <strong>Method: </strong> {order.paymentMethod}
               </Card.Text>
               {order.isPaid ? (
                 <MessageBox variant="success">
@@ -231,7 +230,7 @@ export default function OrderScreen() {
                 <ListGroup.Item>
                   <Row>
                     <Col>
-                      <strong> Order Total</strong>
+                      <strong>Order Total</strong>
                     </Col>
                     <Col>
                       <strong>${order.totalPrice.toFixed(2)}</strong>

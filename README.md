@@ -122,14 +122,14 @@
     - generate paypal client id
     - create api to return client id
     - install react-paypal-js
-    - use paypal scrpit provider in index
-    - use paypal script reducer in order screen
-    - implement load paypal script function
+    - use paypal scrpit provider in index.js
+    - use paypal script reducer in orderscreen
+    - implement loadpaypalscript function
     - render paypal button
     - implement onapprove payment function
     - create pay order api in backend
 31. Display Order History
-    - create order screen
+    - create order history screen
     - create order history api
     - use api in the frontend
 32. Create Profile Screen
