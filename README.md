@@ -137,7 +137,7 @@
     - show user information
     - create user update api
     - update user info
-33. Publish to Heroku (removed from Heroku - no longer free tier)
+33. Publish to Heroku (removed from Heroku)
     Publish to render.com
     - create and config node project
     - serve build folder in frontend folder
