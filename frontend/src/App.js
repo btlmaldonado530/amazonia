@@ -19,7 +19,7 @@ import PaymentMethodScreen from './screens/PaymentMethodScreen';
 import PlaceOrderScreen from './screens/PlaceOrderScreen';
 import OrderScreen from './screens/OrderScreen';
 import OrderHistoryScreen from './screens/OrderHistoryScreen';
-// import ProfileScreen from './screens/ProfileScreen';
+import ProfileScreen from './screens/ProfileScreen';
 // import Button from 'react-bootstrap/Button';
 // import { getError } from './utils';
 // import axios from 'axios';
@@ -38,7 +38,7 @@ function App() {
     localStorage.removeItem('userInfo');
     localStorage.removeItem('shippingAddress');
     localStorage.removeItem('paymentMethod');
-    // window.location.href = '/signin';
+    window.location.href = '/signin';
   };
   // const [sidebarIsOpen, setSidebarIsOpen] = useState(false);
   // const [categories, setCategories] = useState([]);
@@ -158,14 +158,14 @@ function App() {
               {/* <Route path="/search" element={<SearchScreen />} /> */}
               <Route path="/signin" element={<SigninScreen />} />
               <Route path="/signup" element={<SignupScreen />} />
-              {/* <Route
+              <Route
                 path="/profile"
                 element={
-                  <ProtectedRoute>
-                    <ProfileScreen />
-                  </ProtectedRoute>
+                  // <ProtectedRoute>
+                  <ProfileScreen />
+                  // </ProtectedRoute>
                 }
-              /> */}
+              />
               <Route path="/placeorder" element={<PlaceOrderScreen />} />
               <Route
                 path="/order/:id"
