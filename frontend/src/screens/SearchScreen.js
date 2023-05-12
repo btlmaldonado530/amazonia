@@ -92,8 +92,30 @@ export default function SearchScreen() {
     const fetchData = async () => {
       try {
         const { data } = await axios.get(
-          `/api/products/search?page=${page}&query=${query}&category=${category}&price=${price}&rating=${rating}&order=${order}`
+          '/api/products/search',
+          // {
+          //   params: { page: page },
+          //   params: { query: query },
+          //   params: { category: category },
+          //   params: { price: price },
+          //   params: { rating: rating },
+          //   params: { order: order },
+          // }
+          {
+            pathname: '/api/products/search',
+            query: { page: page },
+            query: { query: query },
+            query: { category: category },
+            query: { price: price },
+            query: { rating: rating },
+            query: { order: order },
+          }
         );
+
+        // try {
+        //   const { data } = await axios.get(
+        //     `/api/products/search?page=${page}&query=${query}&category=${category}&price=${price}&rating=${rating}&order=${order}`
+        //   );
         dispatch({ type: 'FETCH_SUCCESS', payload: data });
       } catch (err) {
         dispatch({
@@ -106,6 +128,7 @@ export default function SearchScreen() {
   }, [category, error, order, page, price, query, rating]);
 
   const [categories, setCategories] = useState([]);
+
   useEffect(() => {
     const fetchCategories = async () => {
       try {
@@ -125,7 +148,11 @@ export default function SearchScreen() {
     const filterRating = filter.rating || rating;
     const filterPrice = filter.price || price;
     const sortOrder = filter.order || order;
-    return `/search?category=${filterCategory}&query=${filterQuery}&price=${filterPrice}&rating=${filterRating}&order=${sortOrder}&page=${filterPage}`;
+    return {
+      pathname: '/search',
+      search: `?category=${filterCategory}&query=${filterQuery}&price=${filterPrice}&rating=${filterRating}&order=${sortOrder}&page=${filterPage}`,
+    };
+    // `/search/category=${filterCategory}&query=${filterQuery}&price=${filterPrice}&rating=${filterRating}&order=${sortOrder}&page=${filterPage}`;
   };
   return (
     <div>
