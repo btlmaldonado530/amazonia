@@ -1,14 +1,14 @@
 import React, { useContext, useEffect, useReducer } from 'react';
 import axios from 'axios';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import LoadingBox from '../components/LoadingBox';
 import MessageBox from '../components/MessageBox';
 import { Store } from '../Store';
-import { toast } from 'react-toastify';
-import { getError } from '../utils.js';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import Button from 'react-bootstrap/Button';
+// import { toast } from 'react-toastify';
+// import { getError } from '../utils.js';
+// import Row from 'react-bootstrap/Row';
+// import Col from 'react-bootstrap/Col';
+// import Button from 'react-bootstrap/Button';
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -25,15 +25,15 @@ const reducer = (state, action) => {
     case 'FETCH_FAIL':
       return { ...state, loading: false, error: action.payload };
 
-    case 'CREATE_REQUEST':
-      return { ...state, loadingCreate: true };
-    case 'CREATE_SUCCESS':
-      return {
-        ...state,
-        loadingCreate: false,
-      };
-    case 'CREATE_FAIL':
-      return { ...state, loadingCreate: false };
+    // case 'CREATE_REQUEST':
+    //   return { ...state, loadingCreate: true };
+    // case 'CREATE_SUCCESS':
+    //   return {
+    //     ...state,
+    //     loadingCreate: false,
+    //   };
+    // case 'CREATE_FAIL':
+    //   return { ...state, loadingCreate: false };
 
     default:
       return state;
@@ -41,14 +41,14 @@ const reducer = (state, action) => {
 };
 
 export default function ProductListScreen() {
-  const [{ loading, error, products, pages, loadingCreate }, dispatch] =
+  const [{ loading, error, products, pages }, dispatch] =
     useReducer(reducer, {
       loading: true,
       error: '',
     });
 
-  const navigate = useNavigate();
-  const { search } = useLocation();
+  // const navigate = useNavigate();
+  const { search, pathname } = useLocation();
   const sp = new URLSearchParams(search);
   const page = sp.get('page') || 1;
 
@@ -68,32 +68,33 @@ export default function ProductListScreen() {
     fetchData();
   }, [page, userInfo]);
 
-  const createHandler = async () => {
-    if (window.confirm('Are you sure to create?')) {
-      try {
-        dispatch({ type: 'CREATE_REQUEST' });
-        const { data } = await axios.post(
-          '/api/products',
-          {},
-          {
-            headers: { Authorization: `Bearer ${userInfo.token}` },
-          }
-        );
-        TransformStream.success('product created successfully');
-        dispatch({ type: 'CREATE_SUCCESS' });
-        navigate(`/admin/product/${data.product._id}`);
-      } catch (err) {
-        toast.error(getError(error));
-        dispatch({
-          type: 'CREATE_FAIL',
-        });
-      }
-    }
-  };
+  // const createHandler = async () => {
+  //   if (window.confirm('Are you sure to create?')) {
+  //     try {
+  //       dispatch({ type: 'CREATE_REQUEST' });
+  //       const { data } = await axios.post(
+  //         '/api/products',
+  //         {},
+  //         {
+  //           headers: { Authorization: `Bearer ${userInfo.token}` },
+  //         }
+  //       );
+  //       TransformStream.success('product created successfully');
+  //       dispatch({ type: 'CREATE_SUCCESS' });
+  //       navigate(`/admin/product/${data.product._id}`);
+  //     } catch (err) {
+  //       toast.error(getError(error));
+  //       dispatch({
+  //         type: 'CREATE_FAIL',
+  //       });
+  //     }
+  //   }
+  // };
 
   return (
     <div>
-      <Row>
+      <h1>Products</h1>
+      {/* <Row>
         <Col>
           <h1>Products</h1>
         </Col>
@@ -104,9 +105,9 @@ export default function ProductListScreen() {
             </Button>
           </div>
         </Col>
-      </Row>
+      </Row> */}
 
-      {loadingCreate && <LoadingBox></LoadingBox>}
+      {/* {loadingCreate && <LoadingBox></LoadingBox>} */}
 
       {loading ? (
         <LoadingBox></LoadingBox>

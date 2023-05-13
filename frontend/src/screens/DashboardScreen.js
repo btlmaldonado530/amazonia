@@ -79,7 +79,6 @@ export default function DashboardScreen() {
               <Card>
                 <Card.Body>
                   <Card.Title>
-                    $
                     {summary.orders && summary.users[0]
                       ? summary.orders[0].numOrders
                       : 0}
