@@ -165,3 +165,7 @@
     - create products list ui
     - implement backend api
     - fetch data
+39. Create Product
+    - create product button
+    - implement backend api
+    - handle on click
