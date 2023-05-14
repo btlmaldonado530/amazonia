@@ -169,3 +169,7 @@
     - create product button
     - implement backend api
     - handle on click
+40. Create Edit Product Screen
+    - create edit button
+    - create edit product ui
+    - display product info in input boxes
