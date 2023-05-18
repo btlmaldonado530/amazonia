@@ -181,3 +181,7 @@
     - use the api key in env file
     - handle uplaod file
     - implement backend api to upload
+43. Delete Product
+    - show delete button
+    - implement backend api
+    - handle on click
