@@ -108,7 +108,7 @@
 26. Implement Select Payment Method Screen
     - create input forms
     - handle submit
-27. Create Place Order Screen
+27. Create Preview Order Screen
     - show cart items, payment, and address
     - calculate order summary
 28. Implement Place Order Action
@@ -185,3 +185,7 @@
     - show delete button
     - implement backend api
     - handle on click
+44. List Orders
+    - create order list screen
+    - implement backend api
+    - fetch and display orders

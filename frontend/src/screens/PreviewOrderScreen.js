@@ -26,7 +26,7 @@ const reducer = (state, action) => {
   }
 };
 
-export default function PlaceOrderScreen() {
+export default function PreviewOrderScreen() {
   const navigate = useNavigate();
 
   const [{ loading }, dispatch] = useReducer(reducer, {
