@@ -193,3 +193,7 @@
     - add deliver button
     - handle click action
     - implement backend api for deliver
+46. Delete Order
+    - add delete button
+    - handle click action
+    - implement backend api for delete
