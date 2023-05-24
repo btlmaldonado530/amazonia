@@ -194,7 +194,7 @@
     - handle click action
     - implement backend api for deliver
 46. Delete Order
-    - add delete button
+    - add delete button to admin/orders page
     - handle click action
     - implement backend api for delete
 47. List Users
@@ -202,6 +202,19 @@
     - implement backend api
     - fetch and display users
 48. Edit User
-    - create edit button
+    - add edit button to admin/user page
     - implement backend api
     - handle edit click
+49. Delete User
+    - add delete button to admin/user page
+    - handle click action
+    - implement backend api for delete
+50. Choose Address on Google Maps
+    - create google maps credentials
+    2. update .env file with google api key
+    3. create api to send google api to frontend
+    4. create map screen
+    5. fetch google api
+    6. get user location
+    7. install @react-google-maps/api
+    8. apply map to checkout screen
