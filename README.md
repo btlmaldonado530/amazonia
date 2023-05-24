@@ -201,3 +201,7 @@
     - create user list screen
     - implement backend api
     - fetch and display users
+48. Edit User
+    - create edit button
+    - implement backend api
+    - handle edit click
