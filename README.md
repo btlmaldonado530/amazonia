@@ -211,10 +211,17 @@
     - implement backend api for delete
 50. Choose Address on Google Maps
     - create google maps credentials
-    2. update .env file with google api key
-    3. create api to send google api to frontend
-    4. create map screen
-    5. fetch google api
-    6. get user location
-    7. install @react-google-maps/api
-    8. apply map to checkout screen
+    - update .env file with google api key
+    - create api to send google api to frontend
+    - create map screen
+    - fetch google api
+    - get user location
+    - install @react-google-maps/api
+    - apply map to checkout screen
+51. Email Order Reciept Using Mailgun
+    - create mailgun account
+    - add and verify your domain to mailgun
+    - install mailgun.js
+    - set api key in env file
+    - change pay order in orderRouter
+    - email order receipt
