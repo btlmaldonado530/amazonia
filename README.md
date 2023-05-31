@@ -2,7 +2,59 @@
 
 # MERN Stack ECommerce Website
 
-# Steps
+A fully functional e-commerce website, built using the MERN stack (MongoDB, ExpressJS, React, Node.JS).
+
+## Used:
+
+- HTML5, CSS3: Semantic Elements, CSS Grid, Flexbox
+- React: Components, Props, Events, Hooks, Router, Axios
+- Context API: Store, Reducers, Actions
+- Node & Express: Web API, Body Parser, File Upload, JWT
+- MongoDB: Mongoose, Aggregation
+- Development: ESLint, Babel, Git, GitHub
+- Deployment:
+
+## Run locally
+
+### 1. Clone repo
+
+...
+$ git clone git@github.com:basir/mern-amazona.git
+$ cd mern-amazona
+...
+
+### 2. Setup MongoDB
+
+- Local MongoDB
+  -Install from https://www.mongodb.com/try/downlaod/community
+  -Create .env file in root folder
+  -Set MONGODB_URI=mongodb://localhost/amazona
+- Atlas Cloud MongoDB
+  -Create database at https://cloud.mongodb.com
+  -Create .env file in root folder
+  -Set MONGODB_URI=mongodb+srv://your-db-connection
+
+### 3. Run backend
+
+...
+$ cd backend
+$ npm install
+$ npm start
+...
+
+### 4. Run frontend
+
+...
+$ cd frontend
+$ npm install
+$ nom start
+...
+
+### 5. Seed users and products
+
+http://localhost:5000/api/seed
+
+# Building Steps
 
 1. Install tools
 2. Config VS Code
