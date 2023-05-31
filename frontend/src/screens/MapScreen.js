@@ -1,11 +1,15 @@
 import axios from 'axios';
 import React, { useContext, useEffect, useRef, useState } from 'react';
-import { LoadScript, GoogleMap, StandaloneSearchBox, Marker, } from '@react-google-maps/api';
+import {
+  LoadScript,
+  GoogleMap,
+  StandaloneSearchBox,
+  Marker,
+} from '@react-google-maps/api';
 import { useNavigate } from 'react-router-dom';
 import { Store } from '../Store';
 import Button from 'react-bootstrap/Button';
 import { toast } from 'react-toastify';
-
 
 const defaultLocation = { lat: 45.516, lng: -73.56 };
 const libs = ['places'];
@@ -38,9 +42,7 @@ export default function MapScreen() {
       });
     }
   };
-
   useEffect(() => {
-
     const fetch = async () => {
       const { data } = await axios('/api/keys/google', {
         headers: { Authorization: `Bearer ${userInfo.token}` },
@@ -58,7 +60,6 @@ export default function MapScreen() {
   const onLoad = (map) => {
     mapRef.current = map;
   };
-
   const onIdle = () => {
     setLocation({
       lat: mapRef.current.center.lat(),
@@ -69,7 +70,6 @@ export default function MapScreen() {
   const onLoadPlaces = (place) => {
     placeRef.current = place;
   };
-
   const onPlacesChanged = () => {
     const place = placeRef.current.getPlaces()[0].geometry.location;
     setCenter({ lat: place.lat(), lng: place.lng() });
