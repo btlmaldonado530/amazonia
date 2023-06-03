@@ -34,6 +34,8 @@ import OrderListScreen from './screens/OrderListScreen';
 import UserListScreen from './screens/UserListScreen';
 import UserEditScreen from './screens/UserEditScreen';
 import MapScreen from './screens/MapScreen';
+import ForgetPasswordScreen from './screens/ForgetPasswordScreen';
+import ResetPasswordScreen from './screens/ResetPasswordScreen';
 
 function App() {
   const { state, dispatch: ctxDispatch } = useContext(Store);
@@ -142,9 +144,10 @@ function App() {
             </Container>
           </Navbar>
         </header>
-        <div className={sidebarIsOpen
-          ? 'active-nav side-navbar d-flex justify-content-between flex-wrap flex-column'
-          : 'side-navbar d-flex justify-content-between flex-wrap flex-column'
+        <div className={
+          sidebarIsOpen
+            ? 'active-nav side-navbar d-flex justify-content-between flex-wrap flex-column'
+            : 'side-navbar d-flex justify-content-between flex-wrap flex-column'
         }
         >
           <Nav className='flex-column text-white w-100 p-2'>
@@ -154,8 +157,9 @@ function App() {
             {categories.map((category) => (
               <Nav.Item key={category}>
                 <LinkContainer
-                  to={`/search/category=${category}`}
-                  onClick={() => setSidebarIsOpen(false)}>
+                  to={{ pathname: '/search', search: `category=${category}` }}
+                  onClick={() => setSidebarIsOpen(false)}
+                >
                   <Nav.Link>{category}</Nav.Link>
                 </LinkContainer>
               </Nav.Item>
@@ -170,6 +174,14 @@ function App() {
               <Route path="/search" element={<SearchScreen />} />
               <Route path="/signin" element={<SigninScreen />} />
               <Route path="/signup" element={<SignupScreen />} />
+              <Route
+                path="/forget-password"
+                element={<ForgetPasswordScreen />}
+              />
+              <Route
+                path='/reset-password/:token'
+                element={<ResetPasswordScreen />}
+              />
               <Route
                 path="/profile"
                 element={

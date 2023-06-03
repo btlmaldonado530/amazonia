@@ -44,6 +44,7 @@ productRouter.put(
       product.slug = req.body.slug;
       product.price = req.body.price;
       product.image = req.body.image;
+      product.images = req.body.images;
       product.category = req.body.category;
       product.brand = req.body.brand;
       product.countInStock = req.body.countInStock;
@@ -80,7 +81,7 @@ productRouter.post(
     if (product) {
       if (product.reviews.find((x) => x.name === req.user.name)) {
         return res
-          .status(404)
+          .status(400)
           .send({ message: 'You already submitted a review' });
       }
 
@@ -117,6 +118,7 @@ productRouter.get(
     const { query } = req;
     const page = query.page || 1;
     const pageSize = query.pageSize || PAGE_SIZE;
+
     const products = await Product.find()
       .skip(pageSize * (page - 1))
       .limit(pageSize);
@@ -137,11 +139,11 @@ productRouter.get(
     const pageSize = query.pageSize || PAGE_SIZE;
     const page = query.page || 1;
     const category = query.category || '';
-    const brand = query.brand || '';
     const price = query.price || '';
     const rating = query.rating || '';
     const order = query.order || '';
     const searchQuery = query.query || '';
+
     const queryFilter =
       searchQuery && searchQuery !== 'all'
         ? {
@@ -182,6 +184,7 @@ productRouter.get(
               : order === 'newest'
                 ? { createdAt: -1 }
                 : { _id: -1 };
+
     const products = await Product.find({
       ...queryFilter,
       ...categoryFilter,
@@ -191,6 +194,7 @@ productRouter.get(
       .sort(sortOrder)
       .skip(pageSize * (page - 1))
       .limit(pageSize);
+
     const countProducts = await Product.countDocuments({
       ...queryFilter,
       ...categoryFilter,
@@ -222,7 +226,6 @@ productRouter.get('/slug/:slug', async (req, res) => {
     res.status(404).send({ message: 'Product Not Found' });
   }
 });
-
 productRouter.get('/:id', async (req, res) => {
   const product = await Product.findById(req.params.id);
   if (product) {
@@ -231,4 +234,5 @@ productRouter.get('/:id', async (req, res) => {
     res.status(404).send({ message: 'Product Not Found' });
   }
 });
+
 export default productRouter;

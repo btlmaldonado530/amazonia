@@ -66,7 +66,7 @@ export const ratings = [
   },
 
   {
-    name: '1stars & up',
+    name: '1star & up',
     rating: 1,
   },
 ];
@@ -92,30 +92,9 @@ export default function SearchScreen() {
     const fetchData = async () => {
       try {
         const { data } = await axios.get(
-          '/api/products/search',
-          // {
-          //   params: { page: page },
-          //   params: { query: query },
-          //   params: { category: category },
-          //   params: { price: price },
-          //   params: { rating: rating },
-          //   params: { order: order },
-          // }
-          {
-            pathname: '/api/products/search',
-            query: { page: page },
-            query: { query: query },
-            query: { category: category },
-            query: { price: price },
-            query: { rating: rating },
-            query: { order: order },
-          }
+          `/api/products/search?
+          page=${page}&query=${query}&category=${category}&price=${price}&rating=${rating}&order=${order}`
         );
-
-        // try {
-        //   const { data } = await axios.get(
-        //     `/api/products/search?page=${page}&query=${query}&category=${category}&price=${price}&rating=${rating}&order=${order}`
-        //   );
         dispatch({ type: 'FETCH_SUCCESS', payload: data });
       } catch (err) {
         dispatch({
@@ -128,7 +107,6 @@ export default function SearchScreen() {
   }, [category, error, order, page, price, query, rating]);
 
   const [categories, setCategories] = useState([]);
-
   useEffect(() => {
     const fetchCategories = async () => {
       try {
@@ -141,18 +119,16 @@ export default function SearchScreen() {
     fetchCategories();
   }, [dispatch]);
 
-  const getFilterUrl = (filter) => {
+  const getFilterUrl = (filter, skipPathname) => {
     const filterPage = filter.page || page;
     const filterCategory = filter.category || category;
     const filterQuery = filter.query || query;
     const filterRating = filter.rating || rating;
     const filterPrice = filter.price || price;
     const sortOrder = filter.order || order;
-    return {
-      pathname: '/search',
-      search: `?category=${filterCategory}&query=${filterQuery}&price=${filterPrice}&rating=${filterRating}&order=${sortOrder}&page=${filterPage}`,
-    };
-    // `/search/category=${filterCategory}&query=${filterQuery}&price=${filterPrice}&rating=${filterRating}&order=${sortOrder}&page=${filterPage}`;
+    return `${skipPathname ? '' : '/search?'
+
+      }category=${filterCategory}& query=${filterQuery}& proce=${filterPrice}&rating=${filterRating}&order=${sortOrder}&page=${filterPage}`;
   };
   return (
     <div>
@@ -291,7 +267,10 @@ export default function SearchScreen() {
                   <LinkContainer
                     key={x + 1}
                     className="mx-1"
-                    to={getFilterUrl({ page: x + 1 })}
+                    to={{
+                      pathname: '/search',
+                      search: getFilterUrl({ page: x + 1 }, true),
+                    }}
                   >
                     <Button
                       className={Number(page) === x + 1 ? 'text-bold' : ''}

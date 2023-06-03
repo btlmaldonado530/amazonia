@@ -31,6 +31,7 @@ function reducer(state, action) {
       return { ...state, loadingPay: false };
     case 'PAY_RESET':
       return { ...state, loadingPay: false, successPay: false };
+
     case 'DELIVER_REQUEST':
       return { ...state, loadingDeliver: true };
     case 'DELIVER_SUCCESS':
@@ -47,7 +48,6 @@ function reducer(state, action) {
       return state;
   }
 }
-
 export default function OrderScreen() {
   const { state } = useContext(Store);
   const { userInfo } = state;
@@ -110,7 +110,6 @@ export default function OrderScreen() {
       }
     });
   }
-
   function onError(err) {
     toast.error(getError(err));
   }
@@ -127,6 +126,7 @@ export default function OrderScreen() {
         dispatch({ type: 'FETCH_FAIL', payload: getError(err) });
       }
     };
+
     if (!userInfo) {
       return navigate('/login');
     }
@@ -212,8 +212,7 @@ export default function OrderScreen() {
                   order.shippingAddress.location.lat && (
                     <a
                       target='_new'
-                      href={`https://maps.google.com?
-                      q=${order.shippingAddress.location.lat},${order.shippingAddress.location.lng}`}
+                      href={`https://maps.google.com?q=${order.shippingAddress.location.lat},${order.shippingAddress.location.lng}`}
                     >
                       Show On Map
                     </a>
@@ -228,7 +227,6 @@ export default function OrderScreen() {
               )}
             </Card.Body>
           </Card>
-
           <Card className="mb-3">
             <Card.Body>
               <Card.Title>Payment</Card.Title>
@@ -271,7 +269,6 @@ export default function OrderScreen() {
             </Card.Body>
           </Card>
         </Col>
-
         <Col md={4}>
           <Card className="mb-3">
             <Card.Body>
@@ -330,7 +327,6 @@ export default function OrderScreen() {
                       </Button>
                     </div>
                   </ListGroup.Item>
-
                 )}
               </ListGroup>
             </Card.Body>

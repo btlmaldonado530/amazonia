@@ -32,22 +32,20 @@ const reducer = (state, action) => {
     case 'DELETE_FAIL':
       return { ...state, loadingDelete: false };
     case 'DELETE_RESET':
-      return {
-        ...state, loadingDelete: false, successDelete: false
-      };
+      return { ...state, loadingDelete: false, successDelete: false };
     default:
       return state;
   }
 };
-
 export default function OrderListScreen() {
   const navigate = useNavigate();
   const { state } = useContext(Store);
   const { userInfo } = state;
-  const [{ loading, error, orders, loadingDelete, successDelete }, dispatch] = useReducer(reducer, {
-    loading: true,
-    error: '',
-  });
+  const [{ loading, error, orders, loadingDelete, successDelete }, dispatch] =
+    useReducer(reducer, {
+      loading: true,
+      error: '',
+    });
 
   useEffect(() => {
     const fetchData = async () => {
@@ -82,7 +80,9 @@ export default function OrderListScreen() {
         dispatch({ type: 'DELETE_SUCCESS' });
       } catch (err) {
         toast.error(getError(err));
-        dispatch({ type: 'DELETE_FAIL' });
+        dispatch({
+          type: 'DELETE_FAIL'
+        });
       }
     }
   };
@@ -119,6 +119,7 @@ export default function OrderListScreen() {
                 <td>{order.createdAt.substring(0, 10)}</td>
                 <td>{order.totalPrice.toFixed(2)}</td>
                 <td>{order.isPaid ? order.paidAt.substring(0, 10) : 'No'}</td>
+
                 <td>
                   {order.isDelivered
                     ? order.deliveredAt.substring(0, 10)

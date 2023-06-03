@@ -25,7 +25,6 @@ const reducer = (state, action) => {
       return state;
   }
 };
-
 export default function DashboardScreen() {
   const [{ loading, summary, error }, dispatch] = useReducer(reducer, {
     loading: true,
@@ -38,9 +37,7 @@ export default function DashboardScreen() {
     const fetchData = async () => {
       try {
         const { data } = await axios.get('/api/orders/summary', {
-          headers: {
-            Authorization: `Bearer ${userInfo.token}`,
-          },
+          headers: { Authorization: `Bearer ${userInfo.token}` },
         });
         dispatch({ type: 'FETCH_SUCCESS', payload: data });
       } catch (err) {

@@ -55,7 +55,7 @@ export default function MapScreen() {
     ctxDispatch({
       type: 'SET_FULLBOX_ON',
     });
-  }, [ctxDispatch, userInfo.token]);
+  }, [ctxDispatch, userInfo]);
 
   const onLoad = (map) => {
     mapRef.current = map;
@@ -96,7 +96,6 @@ export default function MapScreen() {
     toast.success('location selected successfully');
     navigate('/shipping');
   };
-
   return (
     <div className="full-box">
       <LoadScript libraries={libs} googleMapsApiKey={googleApiKey}>
